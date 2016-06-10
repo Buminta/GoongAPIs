@@ -1,58 +1,57 @@
 <ul>
-  <li>
-    <p>Get Reports
-<code>sh
-Method: get_reports
+  <li>Get Reports</li>
+</ul>
+
+<pre><code>Method: get_reports
 Route: GET http://localhost:3000/marker/get_reports
 Params: id (marker_id)
 Success:
 {
-  "success": true,
-  "reports": [
-      {
-          "_id": "5477fd4b546861099f130000",
-          "created_at": "2014-11-28T04:42:51.525Z",
-          "marker_change": {
-              "_id": {
-                  "$oid": "5477fd4b546861099f140000"
-              },
-              "lng_lat": null,
-              "name": null
-          },
-          "marker_id": "5477fd4b546861099f0c0000",
-          "processed": false,
-          "report_type_id": "5477fd4b546861099f060000",
-          "updated_at": "2014-11-28T04:42:51.525Z",
-          "user_id": "5477fd4b546861099f020000"
-      }
-  ]
+    "success": true,
+    "reports": [
+        {
+            "_id": "5477fd4b546861099f130000",
+            "created_at": "2014-11-28T04:42:51.525Z",
+            "marker_change": {
+                "_id": {
+                    "$oid": "5477fd4b546861099f140000"
+                },
+                "lng_lat": null,
+                "name": null
+            },
+            "marker_id": "5477fd4b546861099f0c0000",
+            "processed": false,
+            "report_type_id": "5477fd4b546861099f060000",
+            "updated_at": "2014-11-28T04:42:51.525Z",
+            "user_id": "5477fd4b546861099f020000"
+        }
+    ]
 }
-</code></p>
-  </li>
-  <li>
-    <p>Get Comments
-<code>sh
-Method: get_comments
+</code></pre>
+
+<ul>
+  <li>Get Comments</li>
+</ul>
+
+<pre><code>Method: get_comments
 Route: GET http://localhost:3000/marker/get_comments
 Params: id (marker_id)
 Success:
 {
-  "success": true,
-  "comments": [
-      {
-          "_id": "5477ef96546861076f0d0000",
-          "content": "this is comment #1 from user: name_2",
-          "marker_id": "5477ef96546861076f0c0000",
-          "user_id": "5477ef96546861076f030000"
-      },
-      {
-          "_id": "5477ef96546861076f100000",
-          "content": "this is comment #2 from user: name_1",
-          "marker_id": "5477ef96546861076f0c0000",
-          "user_id": "5477ef96546861076f020000"
-      }
-  ]
+    "success": true,
+    "comments": [
+        {
+            "_id": "5477ef96546861076f0d0000",
+            "content": "this is comment #1 from user: name_2",
+            "marker_id": "5477ef96546861076f0c0000",
+            "user_id": "5477ef96546861076f030000"
+        },
+        {
+            "_id": "5477ef96546861076f100000",
+            "content": "this is comment #2 from user: name_1",
+            "marker_id": "5477ef96546861076f0c0000",
+            "user_id": "5477ef96546861076f020000"
+        }
+    ]
 }
-</code></p>
-  </li>
-</ul>
+</code></pre>

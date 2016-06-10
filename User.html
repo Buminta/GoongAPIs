@@ -2,7 +2,7 @@
   <li>Get profile</li>
 </ul>
 
-<pre><code class="language-sh">Method: get_profile
+<pre><code>Method: get_profile
 Route: GET /user/get_profile
 Success:
 {
@@ -28,7 +28,7 @@ Success:
   <li>View profile</li>
 </ul>
 
-<pre><code class="language-sh">Method: view_profile
+<pre><code>Method: view_profile
 Params: userId
 Route: GET http://localhost:3000/user/view_profile
 Success:
@@ -49,7 +49,7 @@ Success:
   <li>Update profile</li>
 </ul>
 
-<pre><code class="language-sh">Method update_profile
+<pre><code>Method update_profile
 Route: PUT http://localhost:3000/user/update_profile
 Params: username, phone_number, full_name, fbId, :avatar (, email, password )
 Success:
@@ -78,7 +78,7 @@ Success:
   <li>Change password</li>
 </ul>
 
-<pre><code class="language-sh">Method change_password
+<pre><code>Method change_password
 Route: PUT http://localhost:3000/user/change_password
 Params: password, newPassword, confirmPassword
 Success:
@@ -106,7 +106,7 @@ Success:
   <li>Get avatar</li>
 </ul>
 
-<pre><code class="language-sh">Method get_avatar
+<pre><code>Method get_avatar
 Route: GET http://localhost:3000/user/avatar/:userId
 Success: (IMAGE)
 </code></pre>

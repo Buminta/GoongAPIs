@@ -1,66 +1,69 @@
 <ul>
-  <li>
-    <p>Like toggle
-<code>sh
-Method: like_toggle
+  <li>Like toggle</li>
+</ul>
+
+<pre><code>Method: like_toggle
 Route: POST /marker/like_toggle
 Params: id
 Success:
 {
-  "message": "Success",
-  "liked": true,
-  "success": true
+    "message": "Success",
+    "liked": true,
+    "success": true
 }
-</code></p>
-  </li>
-  <li>
-    <p>Dislike toggle
-<code>sh
-Method: dislike_toggle
+</code></pre>
+
+<ul>
+  <li>Dislike toggle</li>
+</ul>
+
+<pre><code>Method: dislike_toggle
 Route: POST /marker/dislike_toggle
 Params: id, comment
 Success:
 {
-  "message": "Success",
-  "disliked": true,
-  "success": true
+    "message": "Success",
+    "disliked": true,
+    "success": true
 }
-</code></p>
-  </li>
-  <li>Report
-```sh
-Method: report
+</code></pre>
+
+<ul>
+  <li>Report</li>
+</ul>
+
+<pre><code>Method: report
 Route: POST /marker/report
-Params: type, id (type in [‘EMPTY’, ‘REMOVE’])</li>
-  <li>Optional params: new_name (required for type:NWRONG)</li>
-  <li>Optional params: new_lat, new_lng (required for type:PWRONG),
-                 description_addess, description_info_review, description_number….</li>
-  <li>
-    <p>Optional params: new_speed (required for type:SWRONG)
+Params: type, id (type in ['EMPTY', 'REMOVE'])
+* Optional params: new_name (required for type:NWRONG)
+* Optional params: new_lat, new_lng (required for type:PWRONG),
+                   description_addess, description_info_review, description_number....
+* Optional params: new_speed (required for type:SWRONG)
 Success:
 {
- “success”: true,
- “Message”:”Success”
+   "success": true,
+   "Message":"Success"
 }
-```</p>
-  </li>
-  <li>Add Comment
-<code>sh
-Method: add_comment
+</code></pre>
+
+<ul>
+  <li>Add Comment</li>
+</ul>
+
+<pre><code>Method: add_comment
 Route: POST /marker/comment
 Params: marker_id, content
 Success:
 {
-  "success": true,
-  "message": "Bạn vừa mới bình luận thành công",
-  "comment": {
-      "_id": "5493d8c454686121f4010000",
-      "content": "hello, comment",
-      "created_at": "2014-12-19T14:50:28.364+07:00",
-      "marker_id": "5486ca4154686177c40c0000",
-      "updated_at": "2014-12-19T14:50:28.364+07:00",
-      "user_id": "5486ca4154686177c4000000"
-  }
+    "success": true,
+    "message": "Bạn vừa mới bình luận thành công",
+    "comment": {
+        "_id": "5493d8c454686121f4010000",
+        "content": "hello, comment",
+        "created_at": "2014-12-19T14:50:28.364+07:00",
+        "marker_id": "5486ca4154686177c40c0000",
+        "updated_at": "2014-12-19T14:50:28.364+07:00",
+        "user_id": "5486ca4154686177c4000000"
+    }
 }
-</code></li>
-</ul>
+</code></pre>
