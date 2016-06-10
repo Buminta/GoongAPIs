@@ -1,0 +1,92 @@
+### Response
+
+Sends back a collection of things.
+
+```Status: 200 OK```
+
+```
+{
+    "success": true,
+    "data": {
+        "_id": "5497ed005468615b4cbb4d00",
+        "created_at": "2014-12-22T17:05:52.249+07:00",
+        "description": {
+            "_id": {
+                "$oid": "5497ed005468615b4cbc4d00"
+            },
+            "address": "3 Lý Thái Tổ, Thành phố Lạng Sơn, Lạng Sơn",
+            "district": null,
+            "info_review": null,
+            "number": null,
+            "province": null,
+            "street": null
+        },
+        "like_count": 249,
+        "lng_lat": [
+            106.761781989247,
+            21.8458173238104
+        ],
+        "marker_type_id": "5497ec2a5468615b3d150000",
+        "name": "ATM Agribank",
+        "star_point": 3,
+        "status": "ACCEPT",
+        "updated_at": "2014-12-22T17:05:52.249+07:00",
+        "user_id": "5497ec1a5468615b38000000"
+    },
+    "created_by": {
+        "avatar": "5497ec1a5468615b38000000.jpg",
+        "full_name": null,
+        "username": "root",
+        "_id": "5497ec1a5468615b38000000"
+    },
+    "comments": [
+        {
+            "content": "dddd",
+            "created_at": "2014-12-26T11:23:30.021+07:00",
+            "user": {
+                "avatar": null,
+                "created_at": "2014-12-26T11:15:35.480+07:00",
+                "full_name": "name_4",
+                "username": "user_4"
+            },
+            "_id": "549ce2c254686108b4010000",
+            "marker_id": "5497ec955468615b4c551500",
+            "user_id": "549ce0e7546861088a050000"
+        }
+    ],
+    "likes": [
+        {
+            "_id": {
+                "$oid": "549ce0e7546861088a050000"
+            },
+            "avatar": null,
+            "full_name": "name_4",
+            "username": "user_4"
+        }
+    ],
+    "reports": [
+        {
+            "created_at": "2014-12-26T14:22:45.426+07:00",
+            "processed": false,
+            "report_type": {
+                "code": "EMPTY",
+                "created_at": "2014-12-24T14:49:35.969+07:00",
+                "name": "Không tồn tại"
+            },
+            "user": {
+                "avatar": "5497ec1a5468615b38000000.jpg",
+                "created_at": "2014-12-22T17:02:02.585+07:00",
+                "full_name": null,
+                "username": "root"
+            },
+            "_id": "549d0ca55468610dc1010000",
+            "report_type_id": "549a700f5468611126000000",
+            "marker_id": "5497ec955468615b4c551500",
+            "user_id": "5497ec1a5468615b38000000"
+        }
+    ],
+    "liked": true
+}
+```
+
+For errors responses, see the [response status codes documentation](#response-status-codes).
