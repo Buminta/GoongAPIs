@@ -199,8 +199,7 @@
 <p>Sends back a collection of things.</p>
 
 <p><code>Status: 200 OK</code>
-<code>
-{
+<code>{
     "success": true,
     "markers": [
         {
@@ -260,8 +259,7 @@
             "user_id": "5497f0c0676f6e05a1000000"
         }
     ]
-}
-</code></p>
+}</code></p>
 
 <p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
 
@@ -349,7 +347,7 @@ Success:
   <li>Report</li>
 </ul>
 
-<pre><code>Method: report
+<p><code>Method: report
 Route: POST /marker/report
 Params: type, id (type in ['EMPTY', 'REMOVE'])
 * Optional params: new_name (required for type:NWRONG)
@@ -360,14 +358,13 @@ Success:
 {
    "success": true,
    "Message":"Success"
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>Add Comment</li>
 </ul>
 
-<pre><code>Method: add_comment
+<p><code>Method: add_comment
 Route: POST /marker/comment
 Params: marker_id, content
 Success:
@@ -382,8 +379,7 @@ Success:
         "updated_at": "2014-12-19T14:50:28.364+07:00",
         "user_id": "5486ca4154686177c4000000"
     }
-}
-</code></pre>
+}</code></p>
 
     </section>
   </article>
@@ -395,7 +391,7 @@ Success:
   <li>Get Reports</li>
 </ul>
 
-<pre><code>Method: get_reports
+<p><code>Method: get_reports
 Route: GET http://localhost:3000/marker/get_reports
 Params: id (marker_id)
 Success:
@@ -419,14 +415,13 @@ Success:
             "user_id": "5477fd4b546861099f020000"
         }
     ]
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>Get Comments</li>
 </ul>
 
-<pre><code>Method: get_comments
+<p><code>Method: get_comments
 Route: GET http://localhost:3000/marker/get_comments
 Params: id (marker_id)
 Success:
@@ -446,8 +441,7 @@ Success:
             "user_id": "5477ef96546861076f020000"
         }
     ]
-}
-</code></pre>
+}</code></p>
 
     </section>
   </article>
@@ -1027,7 +1021,7 @@ With existed user:
   <li>Get profile</li>
 </ul>
 
-<pre><code>Method: get_profile
+<p><code>Method: get_profile
 Route: GET /user/get_profile
 Success:
 {
@@ -1046,14 +1040,13 @@ Success:
         "username": "root",
         "has_password": true
     }
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>View profile</li>
 </ul>
 
-<pre><code>Method: view_profile
+<p><code>Method: view_profile
 Params: userId
 Route: GET http://localhost:3000/user/view_profile
 Success:
@@ -1067,14 +1060,13 @@ Success:
         "username": "root",
         "_id": "5497ec1a5468615b38000000"
     }
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>Update profile</li>
 </ul>
 
-<pre><code>Method update_profile
+<p><code>Method update_profile
 Route: PUT http://localhost:3000/user/update_profile
 Params: username, phone_number, full_name, fbId, :avatar (, email, password )
 Success:
@@ -1096,14 +1088,13 @@ Success:
         "username": "seeder",
         "has_password": true
     }
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>Change password</li>
 </ul>
 
-<pre><code>Method change_password
+<p><code>Method change_password
 Route: PUT http://localhost:3000/user/change_password
 Params: password, newPassword, confirmPassword
 Success:
@@ -1124,17 +1115,15 @@ Success:
         "username": "root",
         "has_password": true
     }
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>Get avatar</li>
 </ul>
 
-<pre><code>Method get_avatar
+<p><code>Method get_avatar
 Route: GET http://localhost:3000/user/avatar/:userId
-Success: (IMAGE)
-</code></pre>
+Success: (IMAGE)</code></p>
 
     </section>
   </article>

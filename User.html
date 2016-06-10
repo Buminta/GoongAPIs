@@ -2,7 +2,7 @@
   <li>Get profile</li>
 </ul>
 
-<pre><code>Method: get_profile
+<p><code>Method: get_profile
 Route: GET /user/get_profile
 Success:
 {
@@ -21,14 +21,13 @@ Success:
         "username": "root",
         "has_password": true
     }
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>View profile</li>
 </ul>
 
-<pre><code>Method: view_profile
+<p><code>Method: view_profile
 Params: userId
 Route: GET http://localhost:3000/user/view_profile
 Success:
@@ -42,14 +41,13 @@ Success:
         "username": "root",
         "_id": "5497ec1a5468615b38000000"
     }
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>Update profile</li>
 </ul>
 
-<pre><code>Method update_profile
+<p><code>Method update_profile
 Route: PUT http://localhost:3000/user/update_profile
 Params: username, phone_number, full_name, fbId, :avatar (, email, password )
 Success:
@@ -71,14 +69,13 @@ Success:
         "username": "seeder",
         "has_password": true
     }
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>Change password</li>
 </ul>
 
-<pre><code>Method change_password
+<p><code>Method change_password
 Route: PUT http://localhost:3000/user/change_password
 Params: password, newPassword, confirmPassword
 Success:
@@ -99,14 +96,12 @@ Success:
         "username": "root",
         "has_password": true
     }
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>Get avatar</li>
 </ul>
 
-<pre><code>Method get_avatar
+<p><code>Method get_avatar
 Route: GET http://localhost:3000/user/avatar/:userId
-Success: (IMAGE)
-</code></pre>
+Success: (IMAGE)</code></p>

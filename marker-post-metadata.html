@@ -32,7 +32,7 @@ Success:
   <li>Report</li>
 </ul>
 
-<pre><code>Method: report
+<p><code>Method: report
 Route: POST /marker/report
 Params: type, id (type in ['EMPTY', 'REMOVE'])
 * Optional params: new_name (required for type:NWRONG)
@@ -43,14 +43,13 @@ Success:
 {
    "success": true,
    "Message":"Success"
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>Add Comment</li>
 </ul>
 
-<pre><code>Method: add_comment
+<p><code>Method: add_comment
 Route: POST /marker/comment
 Params: marker_id, content
 Success:
@@ -65,5 +64,4 @@ Success:
         "updated_at": "2014-12-19T14:50:28.364+07:00",
         "user_id": "5486ca4154686177c4000000"
     }
-}
-</code></pre>
+}</code></p>
