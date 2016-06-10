@@ -1,0 +1,106 @@
+<h2 id="user-api">User API</h2>
+
+<p><code>Path: ./app/controllers/user_controller.rb</code></p>
+
+<ul>
+  <li>Get profile
+<code>sh
+Method: get_profile
+Route: GET http://localhost:3000/user/get_profile
+Success:
+{
+  "success": true,
+  "data": {
+      "_id": "5497ec1a5468615b38000000",
+      "avatar": "5497ec1a5468615b38000000.jpg",
+      "created_at": "2014-12-22T17:02:02.585+07:00",
+      "email": "root@to.or",
+      "full_name": null,
+      "is_banned": false,
+      "phone_number": null,
+      "total_like": 0,
+      "total_star": 0,
+      "updated_at": "2014-12-23T18:13:01.612+07:00",
+      "username": "root",
+      "has_password": true
+  }
+}
+</code></li>
+  <li>View profile
+<code>sh
+Method: view_profile
+Params: userId
+Route: GET http://localhost:3000/user/view_profile
+Success:
+{
+  "success": true,
+  "data": {
+      "avatar": "5497ec1a5468615b38000000.jpg",
+      "full_name": null,
+      "is_banned": false,
+      "total_like": 0,
+      "username": "root",
+      "_id": "5497ec1a5468615b38000000"
+  }
+}
+</code></li>
+  <li>Update profile
+<code>sh
+Method update_profile
+Route: PUT http://localhost:3000/user/update_profile
+Params: username, phone_number, full_name, fbId, :avatar (, email, password )
+Success:
+{
+  "success": true,
+  "message": "Thông tin đã được cập nhật",
+  "user": {
+      "_id": "5486ca4154686177c4000000",
+      "avatar": null,
+      "be_reported": 1,
+      "created_at": "2014-12-09T17:09:05.530+07:00",
+      "email": "seeder@seeding.com",
+      "full_name": "seeder",
+      "is_banned": false,
+      "phone_number": null,
+      "total_like": 0,
+      "total_star": 0,
+      "updated_at": "2014-12-22T15:42:32.477+07:00",
+      "username": "seeder",
+      "has_password": true
+  }
+}
+</code></li>
+  <li>
+    <p>Change password
+<code>sh
+Method change_password
+Route: PUT http://localhost:3000/user/change_password
+Params: password, newPassword, confirmPassword
+Success:
+{
+  "success": true,
+  "message": "Password has been updated",
+  "user": {
+      "_id": "5497ec1a5468615b38000000",
+      "avatar": "5497ec1a5468615b38000000.jpg",
+      "created_at": "2014-12-22T17:02:02.585+07:00",
+      "email": "root@to.or",
+      "full_name": null,
+      "is_banned": false,
+      "phone_number": null,
+      "total_like": 0,
+      "total_star": 0,
+      "updated_at": "2014-12-23T18:13:01.612+07:00",
+      "username": "root",
+      "has_password": true
+  }
+}
+</code></p>
+  </li>
+  <li>Get avatar
+<code>sh
+Method get_avatar
+Route: GET http://localhost:3000/user/avatar/:userId
+Success: (IMAGE)
+</code></li>
+</ul>

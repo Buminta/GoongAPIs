@@ -1,0 +1,28 @@
+<h2 id="file-api">File API</h2>
+
+<p><code>Path: ./app/controllers/file_controller.rb</code></p>
+
+<ul>
+  <li>Upload image
+<code>sh
+Method: upload
+Route: POST http://localhost:3000/files
+Params: file(type: file)
+Success:
+{
+  "success": true,
+  "message": "Tải lên thành công",
+  "data": "62feb9ac0eb43067eec9a2d4948d5e8e1a8379d4.1pmint.jpg"
+}
+</code></li>
+  <li>Get image
+```sh
+Method: stream
+Route: GET http://localhost:3000/files/:file_name
+Params: file_name
+Success:</li>
+</ul>
+
+<p>(IMG DATA)</p>
+
+<p>```</p>
