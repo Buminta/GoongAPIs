@@ -19,6 +19,30 @@
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
     <li><a href='#/User'>User</a></li>
     
   
@@ -35,54 +59,14 @@
     
   
     
+    <li><a href='#/response-status-codes'>Response status codes</a></li>
+    
+  
+    
     <li><a href='#/Hostname'>Host name</a></li>
     
   
-    
-    <li><a href='#/Home'>Home</a></li>
-    
   
-    
-    <li><a href='#/Geo-service'>Geo Service</a></li>
-    
-  
-    
-    <li><a href='#/File'>File</a></li>
-    
-  
-    
-    <li><a href='#/Client'>Client</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-  
-  <li><h2>Stuff</h2>
-    <ul>
-    
-              
-        <li class=''><a href='#'></a></li>
-      
-    
-              
-        <li class='GET'><a href='#/get-stuff'>Get stuff</a></li>
-              
-        <li class='POST'><a href='#/post-a-thing'>Post a thing</a></li>
-              
-        <li class='PUT'><a href='#/put-a-thing'>Update a thing</a></li>
-              
-        <li class='DELETE'><a href='#/delete-a-thing'>Delete a thing</a></li>
-      
-    
-    </ul>
-  </li>
-
   <li><h2>Authentication</h2>
     <ul>
     
@@ -101,10 +85,551 @@
     </ul>
   </li>
 
+  <li><h2>Client</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class='GET'><a href='#/client-share-marker'>Share marker</a></li>
+              
+        <li class='GET'><a href='#/client-share-location'>Share marker</a></li>
+              
+        <li class='GET'><a href='#/client-share-app'>Share app</a></li>
+              
+        <li class='GET'><a href='#/client-check-version'>Version check</a></li>
+      
+    
+    </ul>
+  </li>
+
+  <li><h2>FILE</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class='POST'><a href='#/file-upload'>Upload file</a></li>
+              
+        <li class='GET'><a href='#/file-get'>GET file</a></li>
+      
+    
+    </ul>
+  </li>
+
+  <li><h2>GeoService</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class='POST'><a href='#/geo-service-speed-report'>Speed report</a></li>
+              
+        <li class='GET'><a href='#/geo-service-get-speed-limit'>Get speed limit</a></li>
+              
+        <li class='GET'><a href='#/geo-service-address'>Get address</a></li>
+      
+    
+    </ul>
+  </li>
+
+  <li><h2>Marker</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class='GET'><a href='#/marker-within-box'>Within box</a></li>
+              
+        <li class='POST'><a href='#/marker-set-marker'>Set marker</a></li>
+              
+        <li class='GET'><a href='#/marker-get-markers'>Get markers</a></li>
+      
+    
+    </ul>
+  </li>
+
 </ul>
 </nav>
 
 <section id='content'>
+
+  <article class='GET'>
+    <a name='/marker-within-box' href='#/marker-within-box'><h2><code><b>GET</b> _posts/2016-06-10-marker-within-box.mdown</code> Within box</h2></a>
+    <section class='body'>
+      Vị trí quét markers xung quanh khu vực bản đồ
+
+### Request
+
+```{
+    locationLatMin: 'locationLat',
+    locationLngMin: 'locationLng',
+    locationLatMax: 'locationLat',
+    locationLngMax: 'locationLng',
+    markerType: 'markerType',
+    markerCategory: 'markerCategory'
+}```
+
+* Optional params to pagination: page, [ limit(default:1)]
+* Optional params to sector select: direction, angle
+* Optional params to name filter: looklike (trái|phải|tốc độ)
+
+### Response
+
+Sends back a collection of things.
+
+```Status: 200 OK```
+```
+{
+    "success": true,
+    "markers": [
+        {
+            "description": {
+                "address": "Tỉnh lộ 334, Huyện Vân Đồn, Quảng Ninh",
+                "district": null,
+                "info_review": null,
+                "number": null,
+                "province": null,
+                "street": null
+            },
+            "dislike_count": 0,
+            "expired_at": null,
+            "like_count": 38,
+            "lng_lat": [
+                107.442814541258,
+                21.0867587259344
+            ],
+            "name": "Trạm Y tế xã Hạ Long",
+            "published_at": "2014-12-22T17:25:21.897+07:00",
+            "marker_type": {
+                "code": "BV",
+                "description": null,
+                "enable_dislike": false,
+                "name": "Nhà thuốc, bệnh viện, cơ sở y tế"
+            },
+            "_id": "5497f191676f6e0624971c00",
+            "marker_type_id": "5497f0a1676f6e0571170000",
+            "user_id": "5497f0c0676f6e05a1000000"
+        },
+        {
+            "description": {
+                "address": "Huyện Cô Tô, Quảng Ninh",
+                "district": null,
+                "info_review": null,
+                "number": null,
+                "province": null,
+                "street": null
+            },
+            "dislike_count": 0,
+            "expired_at": null,
+            "like_count": 189,
+            "lng_lat": [
+                107.753458317447,
+                20.9892930867066
+            ],
+            "name": "Trạm Y tế xã Đồng Tiến",
+            "published_at": "2014-12-22T17:25:58.720+07:00",
+            "marker_type": {
+                "code": "BV",
+                "description": null,
+                "enable_dislike": false,
+                "name": "Nhà thuốc, bệnh viện, cơ sở y tế"
+            },
+            "_id": "5497f1b6676f6e0624c42f00",
+            "marker_type_id": "5497f0a1676f6e0571170000",
+            "user_id": "5497f0c0676f6e05a1000000"
+        }
+    ]
+}
+```
+
+For errors responses, see the [response status codes documentation](#response-status-codes).
+    </section>
+  </article>
+
+  <article class='POST'>
+    <a name='/marker-set-marker' href='#/marker-set-marker'><h2><code><b>POST</b> _posts/2016-06-10-marker-set-marker.mdown</code> Set marker</h2></a>
+    <section class='body'>
+      Vị trí quét markers đằng trước mặt
+
+### Request
+
+```{
+    locationLat: 'locationLat',
+    locationLng: 'locationLng',
+    name: 'name',
+    description_addess: 'description_addess',
+    description_info_review: 'description_info_review',
+    description_number: 'description_number',
+    image_avatar: 'image_avatar',
+    image_slide: 'image_slide'
+}```
+
+### Response
+
+Sends back a collection of things.
+
+```Status: 200 OK```
+
+Location not shared yet:
+
+```{
+    "success": true,
+    "message": "Cảm ơn bạn đã chia sẻ, địa điểm đã được duyệt tự động, +3 điểm !"
+}```
+
+Location is shared yet, get bonus share:
+
+```{
+    "success": true,
+    "message": "Địa điểm này đã có người chia sẻ, bạn được +1 điểm"
+}
+```
+
+For errors responses, see the [response status codes documentation](#response-status-codes).
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/marker-get-markers' href='#/marker-get-markers'><h2><code><b>GET</b> _posts/2016-06-10-marker-get-markers.mdown</code> Get markers</h2></a>
+    <section class='body'>
+      Vị trí quét markers đằng trước mặt
+
+### Request
+
+```{
+    locationLat: 'locationLat',
+    locationLng: 'locationLng',
+    radius: 50,
+    markerType: 'markerType',
+    markerCategory: 'markerCategory'
+}```
+
+* Optional params to pagination: page, [ limit(default:1)]
+* Optional params to sector select: direction, angle
+* Optional params to name filter: looklike (trái|phải|tốc độ)
+
+### Response
+
+Sends back a collection of things.
+
+```Status: 200 OK```
+```
+{
+    "success": true,
+    "markers": [
+        {
+            "description": {
+                "address": "Huyện Quảng Ninh, Quảng Bình",
+                "district": "Huyện Quảng Ninh",
+                "info_review": "PHONE() FAX() WEBSITE() MAIL()",
+                "number": null,
+                "province": "Quảng Bình",
+                "street": null
+            },
+            "dislike_count": 0,
+            "expired_at": null,
+            "geo_near_distance": 4.000355602329364e-9,
+            "like_count": 449,
+            "lng_lat": [
+                106.69686404244,
+                17.3425737605719
+            ],
+            "name": "Cây xăng",
+            "published_at": "2015-01-12T12:45:44.949+07:00",
+            "marker_type": {
+                "code": "XD",
+                "description": null,
+                "enable_dislike": true,
+                "name": "Cây xăng"
+            },
+            "_id": "54b35f88676f6e67a2000000",
+            "marker_type_id": "5497f0a1676f6e0571180000",
+            "user_id": "549cd708676f6e03a7000000"
+        },
+        {
+            "description": {
+                "address": "Huyện Quảng Ninh, Quảng Bình",
+                "district": null,
+                "info_review": null,
+                "number": null,
+                "province": null,
+                "street": null
+            },
+            "dislike_count": 0,
+            "expired_at": null,
+            "geo_near_distance": 1.2922972364278158,
+            "like_count": 5,
+            "lng_lat": [
+                106.703218419095,
+                17.3313209781806
+            ],
+            "name": "Trung tâm Y tế Gia Ninh",
+            "published_at": "2014-12-22T17:25:08.862+07:00",
+            "marker_type": {
+                "code": "BV",
+                "description": null,
+                "enable_dislike": false,
+                "name": "Nhà thuốc, bệnh viện, cơ sở y tế"
+            },
+            "_id": "5497f184676f6e06241b1500",
+            "marker_type_id": "5497f0a1676f6e0571170000",
+            "user_id": "5497f0c0676f6e05a1000000"
+        }
+    ]
+}
+```
+
+For errors responses, see the [response status codes documentation](#response-status-codes).
+    </section>
+  </article>
+
+  <article class='POST'>
+    <a name='/geo-service-speed-report' href='#/geo-service-speed-report'><h2><code><b>POST</b> _posts/2016-06-10-geo-service-speed-report.mdown</code> Speed report</h2></a>
+    <section class='body'>
+      ### Request
+
+```{
+    locationLat: 'locationLat',
+    locationLng: 'locationLng',
+    speed: 50
+}```
+
+### Response
+
+Sends back a collection of things.
+
+```Status: 200 OK```
+```
+{
+    "success": true,
+    "message": "Báo cáo thành công, cảm ơn bạn"
+}
+```
+
+For errors responses, see the [response status codes documentation](#response-status-codes).
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/geo-service-get-speed-limit' href='#/geo-service-get-speed-limit'><h2><code><b>GET</b> _posts/2016-06-10-geo-service-get-speed-limit.mdown</code> Get speed limit</h2></a>
+    <section class='body'>
+      ### Request
+
+```{
+    locationLat: 'locationLat',
+    locationLng: 'locationLng'
+}```
+
+### Response
+
+Sends back a collection of things.
+
+```Status: 200 OK```
+```
+{
+    "success": true,
+    "road_name": "Đường vào Thuần Mỹ",
+    "speed_limit" :30
+}
+```
+
+For errors responses, see the [response status codes documentation](#response-status-codes).
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/geo-service-address' href='#/geo-service-address'><h2><code><b>GET</b> _posts/2016-06-10-geo-service-address.mdown</code> Get address</h2></a>
+    <section class='body'>
+      ### Request
+
+```{
+    locationLat: 'locationLat',
+    locationLng: 'locationLng'
+}```
+
+### Response
+
+Sends back a collection of things.
+
+```Status: 200 OK```
+```
+{
+    "success": true,
+    "result": "Xã Giáp Đắt, Huyện Đà Bắc, Hòa Bình"
+}
+```
+
+For errors responses, see the [response status codes documentation](#response-status-codes).
+    </section>
+  </article>
+
+  <article class='POST'>
+    <a name='/file-upload' href='#/file-upload'><h2><code><b>POST</b> _posts/2016-06-10-file-upload.md</code> Upload file</h2></a>
+    <section class='body'>
+      <h3 id="request">Request</h3>
+
+<pre><code>file(type: file)
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+<code>
+{
+    "success": true,
+    "message": "Tải lên thành công",
+    "data": "62feb9ac0eb43067eec9a2d4948d5e8e1a8379d4.1pmint.jpg"
+}
+</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/file-get' href='#/file-get'><h2><code><b>GET</b> _posts/2016-06-10-file-get.md</code> GET file</h2></a>
+    <section class='body'>
+      <h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+<code>
+[IMAGE_DATA]
+</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/client-share-marker' href='#/client-share-marker'><h2><code><b>GET</b> _posts/2016-06-10-client-share-marker.md</code> Share marker</h2></a>
+    <section class='body'>
+      <h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+<code>
+{
+    "action": "MK_SHARE",
+    "marker": {
+        "description": {
+            "address": null,
+            "district": null,
+            "info_review": "123",
+            "number": null,
+            "province": null,
+            "street": null
+        },
+        "like_count": 0,
+        "lng_lat": [
+            105.73563743800008,
+            20.326369529000033
+        ],
+        "name": "Giới hạn tốc độ 50",
+        "marker_type": {
+            "code": "GTD",
+            "description": null,
+            "name": "Giới hạn tốc độ"
+        },
+        "_id": "5497ec2e5468615b41000000",
+        "marker_type_id": "5497ec2a5468615b3d120000",
+        "user_id": "5497ec1a5468615b38000000"
+    }
+}
+</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/client-share-location' href='#/client-share-location'><h2><code><b>GET</b> _posts/2016-06-10-client-share-location.md</code> Share marker</h2></a>
+    <section class='body'>
+      <h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+<code>
+{
+    "action": "MK_CUSTOM",
+    "name": "Giới hạn tốc độ",
+    "lng_lat": [
+        105.73563743800008,
+        20.326369529000033
+    ],
+    "location": {
+        "success": true,
+        "result": "Xã Bát Mọt, Huyện Thường Xuân, Thanh Hóa"
+    },
+    "user": {
+        "avatar": "62feb9ac0eb43067eec9a2d4948d5e8e1a8379d4.pmint.jpg",
+        "full_name": null,
+        "is_banned": false,
+        "total_like": 0,
+        "username": "root",
+        "_id": "5497ec1a5468615b38000000"
+    }
+}
+</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/client-share-app' href='#/client-share-app'><h2><code><b>GET</b> _posts/2016-06-10-client-share-app.md</code> Share app</h2></a>
+    <section class='body'>
+      <h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+<code>
+Open store to install application
+</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+    </section>
+  </article>
+
+  <article class='GET'>
+    <a name='/client-check-version' href='#/client-check-version'><h2><code><b>GET</b> _posts/2016-06-10-client-check-version.md</code> Version check</h2></a>
+    <section class='body'>
+      <h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code></p>
+
+<pre><code>{
+    message: "Phiên bản đã được cập nhật mới nhất, v1.3 !",
+    version: "1.3"
+}
+</code></pre>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+    </section>
+  </article>
 
   <article class='POST'>
     <a name='/authentication-register' href='#/authentication-register'><h2><code><b>POST</b> _posts/2016-06-10-authentication-register.md</code> Register</h2></a>
@@ -141,8 +666,7 @@
 }
 </code></p>
 
-<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.
-```</p>
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
 
     </section>
   </article>
@@ -790,647 +1314,61 @@ Success:
   </article>
 
   <article class=''>
+    <a name='/response-status-codes' href='#/response-status-codes'><h2>Response status codes</h2></a>
+    <section class='body'>
+      <h3 id="success">Success</h3>
+
+<p>Successes differ from errors in that their body may not be a simple response object with a code and a message. The headers however are consistent across all calls:</p>
+
+<ul>
+  <li><code>GET</code>, <code>PUT</code>, <code>DELETE</code> returns <code>200 OK</code> on success,</li>
+  <li><code>POST </code> returns 201 on success,</li>
+</ul>
+
+<p>When <a href="#get-stuff">retrieving stuff</a> for example:</p>
+
+<p><code>Status: 200 OK</code>
+<code>{
+    {
+        id: id,
+        success: true
+        name: 'My content'
+    }
+}</code></p>
+
+<h3 id="error">Error</h3>
+
+<p>Error responses are simply returning <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">standard HTTP error codes</a> along with some additional information:</p>
+
+<ul>
+  <li>The error code is sent back as a status header,</li>
+  <li>The body includes an object describing both the code and message (for debugging and/or display purposes),</li>
+</ul>
+
+<p>For a call with an invalid authentication token for example:</p>
+
+<p><code>Status: 401 Access denied</code>
+<code>{
+    code: 401,
+    message: 'Access denied: invalid authentication token.'
+}</code></p>
+
+<p><code>Status: some thing</code>
+<code>{
+    success: false,
+    message: 'Message'
+}</code></p>
+
+    </section>
+  </article>
+
+  <article class=''>
     <a name='/Hostname' href='#/Hostname'><h2>Host name</h2></a>
     <section class='body'>
       <h3 id="marker-apis">Marker APIs</h3>
 
-<p>http://123.31.16.139/</p>
-
-    </section>
-  </article>
-
-  <article class=''>
-    <a name='/Home' href='#/Home'><h2>Home</h2></a>
-    <section class='body'>
-      <h2 id="welcome-to-the-gong-backend-wiki">Welcome to the gong-backend wiki!</h2>
-<ol>
-  <li><a href="#">File Structure</a></li>
-  <li>
-    <p><a href="https://github.com/phongmh307/gong-backend/milestones">Milestones</a>
-&gt; Milestones là các cột mốc bao gồm các gói công việc chính mình sẽ phải hoàn thành trước thời gian
-&gt; được xác định trước, mọi người căn cứ vào thời gian của Milestones đó và các issues được tag để sắp
-&gt; xếp thời gian cho công việc của mình.</p>
-  </li>
-  <li><a href="https://github.com/phongmh307/gong-backend/wiki/Requirements">Requirements</a></li>
-  <li><a href="https://github.com/phongmh307/gong-backend/wiki/Models">Model</a></li>
-  <li>APIs</li>
-</ol>
-
-<blockquote>
-  <ul>
-    <li><a href="https://github.com/phongmh307/gong-backend/wiki/Authentication">Authentication</a></li>
-    <li><a href="https://github.com/phongmh307/gong-backend/wiki/User">User</a></li>
-    <li><a href="https://github.com/phongmh307/gong-backend/wiki/Marker">Marker</a></li>
-    <li><a href="https://github.com/phongmh307/gong-backend/wiki/Geo-service">Geo Service</a></li>
-    <li><a href="https://github.com/phongmh307/gong-backend/wiki/File">File service</a></li>
-    <li><a href="https://github.com/phongmh307/gong-backend/wiki/Client">Client</a></li>
-  </ul>
-</blockquote>
-
-    </section>
-  </article>
-
-  <article class=''>
-    <a name='/Geo-service' href='#/Geo-service'><h2>Geo Service</h2></a>
-    <section class='body'>
-      <h2 id="geoservice-api">GeoService API</h2>
-
-<p><code>Path: ./app/controllers/geo_service_ntroller.rb</code></p>
-
-<ul>
-  <li>Get address
-<code>sh
-Method: get_address
-Route: GET http://localhost:3000/geoservice/get_address
-Params: locationLat, locationLng
-Success:
-{
-  "success": true,
-  "result": "Xã Giáp Đắt, Huyện Đà Bắc, Hòa Bình"
-}
-</code></li>
-  <li>
-    <p>Get speed limit
-<code>sh
-Method: get_speed_limit
-Route: GET http://localhost:3000/geoservice/get_speed_limit
-Params: locationLat, locationLng
-Success:
-{
-  "success": true,
-  "road_name": "Đường vào Thuần Mỹ",
-  "speed_limit" :30
-}
-</code></p>
-  </li>
-  <li>
-    <p>Speed report
-<code>sh
-Method: speed_report
-Route: POST http://localhost:3000/geoservice/speed_report
-Params: locationLat, locationLng, speed
-Success:
-{
-  "success": true,
-  "message": "Báo cáo thành công, cảm ơn bạn"
-}
-</code></p>
-  </li>
-  <li>Filter Address
-```sh
-Method: filter_address
-Route: GET http://goong.io/geoservice/filter_address
-Params:
-—&gt; Tier 1 address: Province, City, District, Commune: tier1
-—&gt; Tier 2 address: address, house number, place: tier2 &amp; (province_id || district_id || commune_id) (Get from tier1 result, get the strongest params available: Commune &gt; District &gt; Province)
-Success:
-http://goong.io/geoservice/filter_address?tier1=thanh hoa
-[
-  {
-      “_id”: 401,
-      “district_id”: null,
-      “lng_lat”: {
-          “lng”: 105.777746698,
-          “lat”: 19.8102073580001
-      },
-      “name_en”: “thanh hoa”,
-      “name_vn”: “Thanh Hóa”,
-      “province_id”: null
-  },
-  {
-      “_id”: 80111,
-      “district_id”: null,
-      “lng_lat”: {
-          “lng”: 106.181309681,
-          “lat”: 10.656036139
-      },
-      “name_en”: “thanh hoa”,
-      “name_vn”: “Huyện Thạnh Hóa”,
-      “province_id”: 801,
-      “province_name”: “Long An”
-  },
-  {
-      “_id”: 40101,
-      “district_id”: null,
-      “lng_lat”: {
-          “lng”: 105.781267908,
-          “lat”: 19.816956878
-      },
-      “name_en”: “thanh hoa”,
-      “name_vn”: “Thành phố Thanh Hóa”,
-      “province_id”: 401,
-      “province_name”: “Thanh Hóa”
-  },
-  {
-      “_id”: 70911,
-      “district_id”: null,
-      “lng_lat”: {
-          “lng”: 106.130158864,
-          “lat”: 11.288101413
-      },
-      “name_en”: “hoa thanh”,
-      “name_vn”: “Huyện Hòa Thành”,
-      “province_id”: 709,
-      “province_name”: “Tây Ninh”
-  },
-  {
-      “_id”: 4070305,
-      “district_id”: 40703,
-      “district_name”: “Huyện Tuyên Hóa”,
-      “lng_lat”: {
-          “lng”: 105.841942958,
-          “lat”: 17.9829163320001
-      },
-      “name_en”: “thanh hoa”,
-      “name_vn”: “Xã Thanh Hóa”,
-      “province_id”: 407,
-      “province_name”: “Quảng Bình”
-  },
-  {
-      “_id”: 4070503,
-      “district_id”: 40705,
-      “district_name”: “Huyện Minh Hóa”,
-      “lng_lat”: {
-          “lng”: 105.831761988,
-          “lat”: 17.8899632790001
-      },
-      “name_en”: “hoa thanh”,
-      “name_vn”: “Xã Hóa Thanh”,
-      “province_id”: 407,
-      “province_name”: “Quảng Bình”
-  },
-  {
-      “_id”: 4033109,
-      “district_id”: 40331,
-      “district_name”: “Huyện Thanh Chương”,
-      “lng_lat”: {
-          “lng”: 105.238767852,
-          “lat”: 18.8403404900001
-      },
-      “name_en”: “thanh hoa”,
-      “name_vn”: “Xã Thanh Hòa”,
-      “province_id”: 403,
-      “province_name”: “Nghệ An”
-  },
-  {
-      “_id”: 4032329,
-      “district_id”: 40323,
-      “district_name”: “Huyện Yên Thành”,
-      “lng_lat”: {
-          “lng”: 105.494026942,
-          “lat”: 19.0021521190001
-      },
-      “name_en”: “hoa thanh”,
-      “name_vn”: “Xã Hoa Thành”,
-      “province_id”: 403,
-      “province_name”: “Nghệ An”
-  },
-  {
-      “_id”: 5091225,
-      “district_id”: 50912,
-      “district_name”: “Huyện Đông Hòa”,
-      “lng_lat”: {
-          “lng”: 109.300807059,
-          “lat”: 13.0334629500001
-      },
-      “name_en”: “hoa thanh”,
-      “name_vn”: “Xã Hòa Thành”,
-      “province_id”: 509,
-      “province_name”: “Phú Yên”
-  },
-  {
-      “_id”: 6052507,
-      “district_id”: 60525,
-      “district_name”: “Huyện Krông Bông”,
-      “lng_lat”: {
-          “lng”: 108.301682452,
-          “lat”: 12.5656724990001
-      },
-      “name_en”: “hoa thanh”,
-      “name_vn”: “Xã Hòa Thành”,
-      “province_id”: 605,
-      “province_name”: “Đắk Lắk”
-  }
-]</li>
-</ul>
-
-<p>http://goong.io/geoservice/filter_address?tier2=nguyen trai&amp;district_id=10111
-[
-    {
-        “_id”: 11135,
-        “commune_id”: 1011111,
-        “commune_name”: “Phường Thanh Xuân Trung”,
-        “district_id”: 10111,
-        “district_name”: “Quận Thanh Xuân”,
-        “lng_lat”: {
-            “lng”: 105.80669061,
-            “lat”: 20.99409436
-        },
-        “name_en”: “nguyen trai”,
-        “name_vn”: “Nguyễn Trãi”,
-        “province_id”: 101,
-        “province_name”: “Hà Nội”
-    },
-    {
-        “_id”: 58422,
-        “commune_id”: 1011103,
-        “commune_name”: “Phường Khương Trung”,
-        “district_id”: 10111,
-        “district_name”: “Quận Thanh Xuân”,
-        “lng_lat”: {
-            “lng”: 105.81959702,
-            “lat”: 21.00235638
-        },
-        “name_en”: “47 nguyen trai”,
-        “name_vn”: “47 Nguyễn Trãi”,
-        “province_id”: 101,
-        “province_name”: “Hà Nội”
-    },
-    {
-        “_id”: 59848,
-        “commune_id”: 1011111,
-        “commune_name”: “Phường Thanh Xuân Trung”,
-        “district_id”: 10111,
-        “district_name”: “Quận Thanh Xuân”,
-        “lng_lat”: {
-            “lng”: 105.80378462,
-            “lat”: 20.99215394
-        },
-        “name_en”: “506 nguyen trai”,
-        “name_vn”: “506 Nguyễn Trãi”,
-        “province_id”: 101,
-        “province_name”: “Hà Nội”
-    },
-    {
-        “_id”: 59849,
-        “commune_id”: 1011111,
-        “commune_name”: “Phường Thanh Xuân Trung”,
-        “district_id”: 10111,
-        “district_name”: “Quận Thanh Xuân”,
-        “lng_lat”: {
-            “lng”: 105.80372551,
-            “lat”: 20.99215009
-        },
-        “name_en”: “508 nguyen trai”,
-        “name_vn”: “508 Nguyễn Trãi”,
-        “province_id”: 101,
-        “province_name”: “Hà Nội”
-    },
-    {
-        “_id”: 59850,
-        “commune_id”: 1011103,
-        “commune_name”: “Phường Khương Trung”,
-        “district_id”: 10111,
-        “district_name”: “Quận Thanh Xuân”,
-        “lng_lat”: {
-            “lng”: 105.8199637,
-            “lat”: 21.002612
-        },
-        “name_en”: “23 nguyen trai”,
-        “name_vn”: “23 Nguyễn Trãi”,
-        “province_id”: 101,
-        “province_name”: “Hà Nội”
-    },
-    {
-        “_id”: 60106,
-        “commune_id”: 1011103,
-        “commune_name”: “Phường Khương Trung”,
-        “district_id”: 10111,
-        “district_name”: “Quận Thanh Xuân”,
-        “lng_lat”: {
-            “lng”: 105.81951221,
-            “lat”: 21.00228863
-        },
-        “name_en”: “49a nguyen trai”,
-        “name_vn”: “49A Nguyễn Trãi”,
-        “province_id”: 101,
-        “province_name”: “Hà Nội”
-    },
-    {
-        “_id”: 61950,
-        “commune_id”: 1011119,
-        “commune_name”: “Phường Thanh Xuân Nam”,
-        “district_id”: 10111,
-        “district_name”: “Quận Thanh Xuân”,
-        “lng_lat”: {
-            “lng”: 105.79753067,
-            “lat”: 20.98729314
-        },
-        “name_en”: “509 nguyen trai”,
-        “name_vn”: “509 Nguyễn Trãi”,
-        “province_id”: 101,
-        “province_name”: “Hà Nội”
-    },
-    {
-        “_id”: 61951,
-        “commune_id”: 1011119,
-        “commune_name”: “Phường Thanh Xuân Nam”,
-        “district_id”: 10111,
-        “district_name”: “Quận Thanh Xuân”,
-        “lng_lat”: {
-            “lng”: 105.79747463,
-            “lat”: 20.9872535
-        },
-        “name_en”: “513 nguyen trai”,
-        “name_vn”: “513 Nguyễn Trãi”,
-        “province_id”: 101,
-        “province_name”: “Hà Nội”
-    },
-    {
-        “_id”: 61952,
-        “commune_id”: 1011119,
-        “commune_name”: “Phường Thanh Xuân Nam”,
-        “district_id”: 10111,
-        “district_name”: “Quận Thanh Xuân”,
-        “lng_lat”: {
-            “lng”: 105.79719286,
-            “lat”: 20.98705421
-        },
-        “name_en”: “521k nguyen trai”,
-        “name_vn”: “521K Nguyễn Trãi”,
-        “province_id”: 101,
-        “province_name”: “Hà Nội”
-    },
-    {
-        “_id”: 61953,
-        “commune_id”: 1011119,
-        “commune_name”: “Phường Thanh Xuân Nam”,
-        “district_id”: 10111,
-        “district_name”: “Quận Thanh Xuân”,
-        “lng_lat”: {
-            “lng”: 105.79716033,
-            “lat”: 20.9870312
-        },
-        “name_en”: “521h nguyen trai”,
-        “name_vn”: “521H Nguyễn Trãi”,
-        “province_id”: 101,
-        “province_name”: “Hà Nội”
-    }
-]
-```</p>
-
-    </section>
-  </article>
-
-  <article class=''>
-    <a name='/File' href='#/File'><h2>File</h2></a>
-    <section class='body'>
-      <h2 id="file-api">File API</h2>
-
-<p><code>Path: ./app/controllers/file_controller.rb</code></p>
-
-<ul>
-  <li>Upload image
-<code>sh
-Method: upload
-Route: POST http://localhost:3000/files
-Params: file(type: file)
-Success:
-{
-  "success": true,
-  "message": "Tải lên thành công",
-  "data": "62feb9ac0eb43067eec9a2d4948d5e8e1a8379d4.1pmint.jpg"
-}
-</code></li>
-  <li>Get image
-```sh
-Method: stream
-Route: GET http://localhost:3000/files/:file_name
-Params: file_name
-Success:</li>
-</ul>
-
-<p>(IMG DATA)</p>
-
-<p>```</p>
-
-    </section>
-  </article>
-
-  <article class=''>
-    <a name='/Client' href='#/Client'><h2>Client</h2></a>
-    <section class='body'>
-      <h2 id="client-api">Client API</h2>
-
-<p><code>Path: ./app/controllers/client_controller.rb</code></p>
-
-<ul>
-  <li>
-    <p>Share marker
-<code>sh
-Method: share_marker
-Route: GET http://localhost:3000/s/m/:marker_id
-Success: Open application with data below
-{
-  "action": "MK_SHARE",
-  "marker": {
-      "description": {
-          "address": null,
-          "district": null,
-          "info_review": "123",
-          "number": null,
-          "province": null,
-          "street": null
-      },
-      "like_count": 0,
-      "lng_lat": [
-          105.73563743800008,
-          20.326369529000033
-      ],
-      "name": "Giới hạn tốc độ 50",
-      "marker_type": {
-          "code": "GTD",
-          "description": null,
-          "name": "Giới hạn tốc độ"
-      },
-      "_id": "5497ec2e5468615b41000000",
-      "marker_type_id": "5497ec2a5468615b3d120000",
-      "user_id": "5497ec1a5468615b38000000"
-  }
-}
-</code></p>
-  </li>
-  <li>
-    <p>Share location
-<code>sh
-Method: share_location
-Route: GET http://localhost:3000/s/l/:lng/:lat(/:name)(/:user_id)
-Success: Open application with data below
-{
-  "action": "MK_CUSTOM",
-  "name": "Giới hạn tốc độ",
-  "lng_lat": [
-      105.73563743800008,
-      20.326369529000033
-  ],
-  "location": {
-      "success": true,
-      "result": "Xã Bát Mọt, Huyện Thường Xuân, Thanh Hóa"
-  },
-  "user": {
-      "avatar": "62feb9ac0eb43067eec9a2d4948d5e8e1a8379d4.pmint.jpg",
-      "full_name": null,
-      "is_banned": false,
-      "total_like": 0,
-      "username": "root",
-      "_id": "5497ec1a5468615b38000000"
-  }
-}
-</code></p>
-  </li>
-  <li>
-    <p>Share app
-<code>sh
-Method: install
-Route: GET http://localhost:3000/s/install
-Success: Open store to install application
-</code></p>
-  </li>
-  <li>
-    <p>Version check
-<code>sh
-Method: check_version
-Route: GET http://localhost:3000/version/check
-Params: version, platform
-Success:
-{
-  message: "Phiên bản đã được cập nhật mới nhất, v1.3 !",
-  version: "1.3"
-}
-</code></p>
-  </li>
-</ul>
-
-    </section>
-  </article>
-
-  <article class='GET'>
-    <a name='/get-stuff' href='#/get-stuff'><h2><code><b>GET</b> _posts/2012-12-27-get-stuff.md</code> Get stuff</h2></a>
-    <section class='body'>
-      <p>This method allows users to retrieve stuff.</p>
-
-<h3 id="request">Request</h3>
-
-<ul>
-  <li>The headers must include a <strong>valid authentication token</strong>.</li>
-</ul>
-
-<h3 id="response">Response</h3>
-
-<p>Sends back a collection of things.</p>
-
-<p><code>Status: 200 OK</code>
-<code>{
-    {
-        id: thing_1,
-        name: 'My first thing'
-    },
-    {
-        id: thing_2,
-        name: 'My second thing'
-    }
-}</code></p>
-
-<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
-
-    </section>
-  </article>
-
-  <article class='POST'>
-    <a name='/post-a-thing' href='#/post-a-thing'><h2><code><b>POST</b> _posts/2012-12-26-post-a-thing.md</code> Post a thing</h2></a>
-    <section class='body'>
-      <p>This method allows users to create a new thing.</p>
-
-<h3 id="request">Request</h3>
-
-<ul>
-  <li>The headers must include a <strong>valid authentication token</strong>.</li>
-  <li><strong>The body can’t be empty</strong> and must include at least the name attribute, a <code>string</code> that will be used as the name of the thing.</li>
-</ul>
-
-<p><code>Authentication: bearer TOKEN</code>
-<code>{
-    name: 'My new thing'
-}</code></p>
-
-<h3 id="response">Response</h3>
-
-<p><strong>If succeeds</strong>, returns the created thing.</p>
-
-<p><code>Status: 201 Created</code>
-<code>{
-    id: new_thing,
-    name: 'My new thing'
-}</code></p>
-
-<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
-
-    </section>
-  </article>
-
-  <article class='PUT'>
-    <a name='/put-a-thing' href='#/put-a-thing'><h2><code><b>PUT</b> _posts/2012-12-25-put-a-thing.md</code> Update a thing</h2></a>
-    <section class='body'>
-      <p>This method allows the user to retrieve his stuff.</p>
-
-<h3 id="request">Request</h3>
-
-<ul>
-  <li><strong><code>:id</code></strong> is the id the thing to update.</li>
-  <li>The headers must include a <strong>valid authentication token</strong>.</li>
-  <li><strong>The body can’t be empty</strong> and must include at least the name attribute, a <code>string</code> that will be used as the name of the thing.</li>
-</ul>
-
-<p><code>Authentication: bearer f862f658-ad89-4fcb-995b-7a4c50554ff6</code>
-<code>{
-    name: 'My new thing'
-}</code></p>
-
-<h3 id="response">Response</h3>
-
-<p>Sends back a collection of things.</p>
-
-<p><code>Status: 200 OK</code>
-<code>{
-    {
-        id: thing_1,
-        name: 'My first thing'
-    },
-    {
-        id: thing_2,
-        name: 'My second thing'
-    }
-}</code></p>
-
-<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
-
-    </section>
-  </article>
-
-  <article class='DELETE'>
-    <a name='/delete-a-thing' href='#/delete-a-thing'><h2><code><b>DELETE</b> _posts/2012-12-24-delete-a-thing.md</code> Delete a thing</h2></a>
-    <section class='body'>
-      <p>This method allows the user to post a new thing to his stuff.</p>
-
-<h3 id="request">Request</h3>
-
-<ul>
-  <li><strong><code>:id</code></strong> is the id the thing to delete.</li>
-  <li>The headers must include a <strong>valid authentication token</strong>.</li>
-  <li><strong>The body is omitted</strong>.</li>
-</ul>
-
-<h3 id="response">Response</h3>
-
-<p>Sends back a collection of things.</p>
-
-<p><code>Status: 200 Deleted</code>
-<code>{
-    code: 200,
-    message: 'Your thing (id: 736) was deleted'
-}</code></p>
-
-<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+<pre><code>http://123.31.16.139/
+</code></pre>
 
     </section>
   </article>

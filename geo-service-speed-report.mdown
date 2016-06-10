@@ -1,0 +1,21 @@
+### Request
+
+```{
+    locationLat: 'locationLat',
+    locationLng: 'locationLng',
+    speed: 50
+}```
+
+### Response
+
+Sends back a collection of things.
+
+```Status: 200 OK```
+```
+{
+    "success": true,
+    "message": "Báo cáo thành công, cảm ơn bạn"
+}
+```
+
+For errors responses, see the [response status codes documentation](#response-status-codes).

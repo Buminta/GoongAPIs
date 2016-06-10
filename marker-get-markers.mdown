@@ -1,0 +1,88 @@
+Vị trí quét markers đằng trước mặt
+
+### Request
+
+```{
+    locationLat: 'locationLat',
+    locationLng: 'locationLng',
+    radius: 50,
+    markerType: 'markerType',
+    markerCategory: 'markerCategory'
+}```
+
+* Optional params to pagination: page, [ limit(default:1)]
+* Optional params to sector select: direction, angle
+* Optional params to name filter: looklike (trái|phải|tốc độ)
+
+### Response
+
+Sends back a collection of things.
+
+```Status: 200 OK```
+```
+{
+    "success": true,
+    "markers": [
+        {
+            "description": {
+                "address": "Huyện Quảng Ninh, Quảng Bình",
+                "district": "Huyện Quảng Ninh",
+                "info_review": "PHONE() FAX() WEBSITE() MAIL()",
+                "number": null,
+                "province": "Quảng Bình",
+                "street": null
+            },
+            "dislike_count": 0,
+            "expired_at": null,
+            "geo_near_distance": 4.000355602329364e-9,
+            "like_count": 449,
+            "lng_lat": [
+                106.69686404244,
+                17.3425737605719
+            ],
+            "name": "Cây xăng",
+            "published_at": "2015-01-12T12:45:44.949+07:00",
+            "marker_type": {
+                "code": "XD",
+                "description": null,
+                "enable_dislike": true,
+                "name": "Cây xăng"
+            },
+            "_id": "54b35f88676f6e67a2000000",
+            "marker_type_id": "5497f0a1676f6e0571180000",
+            "user_id": "549cd708676f6e03a7000000"
+        },
+        {
+            "description": {
+                "address": "Huyện Quảng Ninh, Quảng Bình",
+                "district": null,
+                "info_review": null,
+                "number": null,
+                "province": null,
+                "street": null
+            },
+            "dislike_count": 0,
+            "expired_at": null,
+            "geo_near_distance": 1.2922972364278158,
+            "like_count": 5,
+            "lng_lat": [
+                106.703218419095,
+                17.3313209781806
+            ],
+            "name": "Trung tâm Y tế Gia Ninh",
+            "published_at": "2014-12-22T17:25:08.862+07:00",
+            "marker_type": {
+                "code": "BV",
+                "description": null,
+                "enable_dislike": false,
+                "name": "Nhà thuốc, bệnh viện, cơ sở y tế"
+            },
+            "_id": "5497f184676f6e06241b1500",
+            "marker_type_id": "5497f0a1676f6e0571170000",
+            "user_id": "5497f0c0676f6e05a1000000"
+        }
+    ]
+}
+```
+
+For errors responses, see the [response status codes documentation](#response-status-codes).

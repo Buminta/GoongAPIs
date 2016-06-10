@@ -1,0 +1,37 @@
+Vị trí quét markers đằng trước mặt
+
+### Request
+
+```{
+    locationLat: 'locationLat',
+    locationLng: 'locationLng',
+    name: 'name',
+    description_addess: 'description_addess',
+    description_info_review: 'description_info_review',
+    description_number: 'description_number',
+    image_avatar: 'image_avatar',
+    image_slide: 'image_slide'
+}```
+
+### Response
+
+Sends back a collection of things.
+
+```Status: 200 OK```
+
+Location not shared yet:
+
+```{
+    "success": true,
+    "message": "Cảm ơn bạn đã chia sẻ, địa điểm đã được duyệt tự động, +3 điểm !"
+}```
+
+Location is shared yet, get bonus share:
+
+```{
+    "success": true,
+    "message": "Địa điểm này đã có người chia sẻ, bạn được +1 điểm"
+}
+```
+
+For errors responses, see the [response status codes documentation](#response-status-codes).
