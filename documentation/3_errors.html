@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>My App Docs</title>
+  <title>Errors</title>
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/css/railscasts.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 </head>
-<body class="docs">
+<body class="docs fixed-width multi-page">
 
   <nav class="nav-bar">
     <div class="wrap">
@@ -52,7 +52,7 @@
     
 
       
-        <div id="sidebar" class="sidebar">
+          <div id="sidebar" class="sidebar">
   
     
   
@@ -67,14 +67,61 @@
     <div class="main">
       <script src="/js/lunr.min.js"></script>
 <script src="/js/search.js"></script>
- 
+<section class="doc-content full">
+  <section class="left-docs">
+    <h3><a id="documentation3_errorshtml">
+      Errors
+      </a></h3>
+    
 
-  
+    
 
-  
+      <table class="return_codes">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="return-code">200</span></td>
+        <td>OK</td>
+        <td>Success</td>
+      </tr>
+      <tr>
+        <td><span class="return-code">201</span></td>
+        <td>Created</td>
+        <td>Creation successful</td>
+      </tr>
 
-  
+      <tr>
+        <td><span class="return-code">400</span></td>
+        <td>Bad Request</td>
+        <td>We could not process that action</td>
+      </tr>
 
+      <tr>
+        <td><span class="return-code">403</span></td>
+        <td>Forbidden</td>
+        <td>We couldn't authenticate you</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p> All errors will return JSON in the following format: </p>
+
+  <pre>
+{
+  error: true,
+  message: "error message here"
+}</pre>
+
+
+
+  </section>
+</section>
 
     </div>
   </div>

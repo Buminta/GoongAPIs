@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>My App Docs</title>
+  <title>/books</title>
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/css/railscasts.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 </head>
-<body class="docs">
+<body class="docs fixed-width multi-page">
 
   <nav class="nav-bar">
     <div class="wrap">
@@ -52,7 +52,7 @@
     
 
       
-        <div id="sidebar" class="sidebar">
+          <div id="sidebar" class="sidebar">
   
     
   
@@ -67,14 +67,69 @@
     <div class="main">
       <script src="/js/lunr.min.js"></script>
 <script src="/js/search.js"></script>
- 
+<section class="doc-content full">
+  <section class="left-docs">
+    <h3><a id="api1_1_books_listhtml">
+      /books
+      <span class="endpoint get"></span> </a></h3>
+    
+      <p class="description">List all books</p>
+    
 
-  
+    
+      <h6> List Book Format </h6>
+      <dl class="parameters">
+        
+          
+          <dt>offset</dt>
+          <dd>
+            <strong> integer </strong>
+            <br />
+            Offset the results by this amount
+            </dd>
+          
+        
+          
+          <dt>limit</dt>
+          <dd>
+            <strong> integer </strong>
+            <br />
+            Limit the number of books returned
+            </dd>
+          
+        
+      </dl>
+    
 
-  
+    <p> Lists all the photos you have access to. You can paginate by using the parameters listed above. </p>
 
-  
+<div class="code-viewer">
+  <pre data-language="jQuery">
+  $.get('http://api.myapp.com/books/', { token: 'YOUR_APP_KEY'}, function(data) {
+    alert(data);
+  });</pre>
 
+  <pre data-language="Python">
+  r = requests.get('http://api.myapp.com/books/', token="YOUR_APP_KEY")
+  print r.text</pre>
+
+  <pre data-language="Node">
+  var request = require('request');
+  request('http://api.myapp.com/books?token=YOUR_APP_KEY', function (error, response, body) {
+    if (!error &amp;&amp; response.statusCode == 200) {
+      console.log(body);
+    }
+  })</pre>
+
+  <pre data-language="cURL">
+  curl http://sampleapi.readme.com/orders?key=YOUR_APP_KEY</pre>
+
+</div>
+
+
+
+  </section>
+</section>
 
     </div>
   </div>
