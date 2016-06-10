@@ -1,0 +1,46 @@
+<h3 id="request">Request</h3>
+
+<p><code>{
+    fbId: 'id',
+    email: 'email'
+}</code></p>
+
+<ul>
+  <li>Extra</li>
+</ul>
+
+<pre><code>{
+    username: 'username',
+    phone_number: 'phone_number',
+    full_name: 'full_name',
+    avatar: 'avatar'
+}
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+With non-existed user:
+<code>{
+    "success": true,
+    "userId": "546cd87c5468610e4b000000",
+    "username": null,
+    "email": "phamminhthanh6d9@gmail.com",
+    "message": "New account (Facebook) created!",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDg3YzU0Njg2MTBlNGIwMDAwMDAiLCJpYXQiOjE0MTY0MTk0NTIsImV4cCI6MTQyMTYwMzQ1Mn0.fkj8Kr2icFZeJ2mBaoKXnHQnbGeSOZ0OfSzTtDD6c4w"
+}
+</code>
+With existed user:
+<code>{
+    "success": true,
+    "userId": "546cd87c5468610e4b000000",
+    "username": null,
+    "email": "phamminhthanh6d9@gmail.com",
+    "message": "Account (Facebook) existed. Updated user info &amp; logged in!",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDg3YzU0Njg2MTBlNGIwMDAwMDAiLCJpYXQiOjE0MTY0MTk1MjksImV4cCI6MTQyMTYwMzUyOX0.1sRmxsx9E0SJDCiWKDClDRp54JZE5LmjRTRmlUWmOCM"
+}
+</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>

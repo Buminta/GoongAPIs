@@ -1,0 +1,36 @@
+<h3 id="request">Request</h3>
+
+<p><code>{
+    username: 'My username',
+    email: 'My email',
+    password: '***',
+    password_confirmation: '***'
+}</code></p>
+
+<ul>
+  <li>Extra
+<code>
+{
+  phone_number: 'Number phone',
+  full_name: 'Full name'
+}
+</code>
+### Response</li>
+</ul>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+<code>
+{
+    "success": true,
+    "message": "Register successful",
+    "userId": "546cd4615468610a680e0000",
+    "username": "pmint93",
+    "email": "phamminhthanh69@gmail.com",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDQ2MTU0Njg2MTBhNjgwZTAwMDAiLCJpYXQiOjE0MTY0MTg0MDEsImV4cCI6MTQyMTYwMjQwMX0.Y1tXSGruMDUa180H8AH1dqEgnQjIN9A5nYq4ZTzOBok"
+}
+</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.
+```</p>

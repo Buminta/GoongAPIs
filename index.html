@@ -15,6 +15,10 @@
     
   
     
+  
+    
+  
+    
     <li><a href='#/User'>User</a></li>
     
   
@@ -28,6 +32,10 @@
   
     
     <li><a href='#/Marker'>Marker</a></li>
+    
+  
+    
+    <li><a href='#/Hostname'>Host name</a></li>
     
   
     
@@ -47,14 +55,6 @@
     
   
     
-    <li><a href='#/response-status-codes'>Response status codes</a></li>
-    
-  
-    
-    <li><a href='#/authentication'>Authenticate</a></li>
-    
-  
-    
   
     
   
@@ -71,8 +71,6 @@
       
     
               
-        <li class='GET'><a href='#/authentication'>Get stuff 2</a></li>
-              
         <li class='GET'><a href='#/get-stuff'>Get stuff</a></li>
               
         <li class='POST'><a href='#/post-a-thing'>Post a thing</a></li>
@@ -85,74 +83,152 @@
     </ul>
   </li>
 
+  <li><h2>Authentication</h2>
+    <ul>
+    
+              
+        <li class=''><a href='#'></a></li>
+      
+    
+              
+        <li class='POST'><a href='#/authentication-register'>Register</a></li>
+              
+        <li class='POST'><a href='#/authentication-login'>Login</a></li>
+              
+        <li class='POST'><a href='#/authentication-facebook'>Login via facebook</a></li>
+      
+    
+    </ul>
+  </li>
+
 </ul>
 </nav>
 
 <section id='content'>
 
-  <article class='GET'>
-    <a name='/authentication' href='#/authentication'><h2><code><b>GET</b> _posts/2016-06-10-authentication.md</code> Get stuff 2</h2></a>
+  <article class='POST'>
+    <a name='/authentication-register' href='#/authentication-register'><h2><code><b>POST</b> _posts/2016-06-10-authentication-register.md</code> Register</h2></a>
     <section class='body'>
-      <h2 id="authentication-api">Authentication API</h2>
+      <h3 id="request">Request</h3>
 
-<p><code>Path: ./app/controllers/auth_controller.rb</code></p>
+<p><code>{
+    username: 'My username',
+    email: 'My email',
+    password: '***',
+    password_confirmation: '***'
+}</code></p>
 
 <ul>
-  <li>Register
-<code>sh
-Method: register
-Route: POST http://localhost:3000/auth/register
-Params: username, email, password, password_confirmation [, phone_number, full_name ]
-Success:
+  <li>Extra
+<code>
 {
-  "success": true,
-  "message": "Register successful",
-  "userId": "546cd4615468610a680e0000",
-  "username": "pmint93",
-  "email": "phamminhthanh69@gmail.com",
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDQ2MTU0Njg2MTBhNjgwZTAwMDAiLCJpYXQiOjE0MTY0MTg0MDEsImV4cCI6MTQyMTYwMjQwMX0.Y1tXSGruMDUa180H8AH1dqEgnQjIN9A5nYq4ZTzOBok"
+  phone_number: 'Number phone',
+  full_name: 'Full name'
 }
-</code></li>
-  <li>Login
-<code>sh
-Method: login
-Route: POST http://localhost:3000/auth/login
-Params: username, password
-Success:
-{
-  "success": true,
-  "userId": "546cd4615468610a680e0000",
-  "message": "Login successful",
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDQ2MTU0Njg2MTBhNjgwZTAwMDAiLCJpYXQiOjE0MTY0MTg3NzUsImV4cCI6MTQyMTYwMjc3NX0.qPKPPJpux64Bg5--5xjecMGCCkPIsmymCJlzvZyNrPo",
-  "username": "pmint93",
-  "email": "phamminhthanh69@gmail.com"
-}
-</code></li>
-  <li>Login via facebook
-<code>sh
-Method: facebook
-Route: POST http://localhost:3000/auth/facebook
-Params: fbId, email [, username, phone_number, full_name, avatar ]
-With non-existed user:
-{
-  "success": true,
-  "userId": "546cd87c5468610e4b000000",
-  "username": null,
-  "email": "phamminhthanh6d9@gmail.com",
-  "message": "New account (Facebook) created!",
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDg3YzU0Njg2MTBlNGIwMDAwMDAiLCJpYXQiOjE0MTY0MTk0NTIsImV4cCI6MTQyMTYwMzQ1Mn0.fkj8Kr2icFZeJ2mBaoKXnHQnbGeSOZ0OfSzTtDD6c4w"
-}
-With existed user:
-{
-  "success": true,
-  "userId": "546cd87c5468610e4b000000",
-  "username": null,
-  "email": "phamminhthanh6d9@gmail.com",
-  "message": "Account (Facebook) existed. Updated user info &amp; logged in!",
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDg3YzU0Njg2MTBlNGIwMDAwMDAiLCJpYXQiOjE0MTY0MTk1MjksImV4cCI6MTQyMTYwMzUyOX0.1sRmxsx9E0SJDCiWKDClDRp54JZE5LmjRTRmlUWmOCM"
-}
-</code></li>
+</code>
+### Response</li>
 </ul>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+<code>
+{
+    "success": true,
+    "message": "Register successful",
+    "userId": "546cd4615468610a680e0000",
+    "username": "pmint93",
+    "email": "phamminhthanh69@gmail.com",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDQ2MTU0Njg2MTBhNjgwZTAwMDAiLCJpYXQiOjE0MTY0MTg0MDEsImV4cCI6MTQyMTYwMjQwMX0.Y1tXSGruMDUa180H8AH1dqEgnQjIN9A5nYq4ZTzOBok"
+}
+</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.
+```</p>
+
+    </section>
+  </article>
+
+  <article class='POST'>
+    <a name='/authentication-login' href='#/authentication-login'><h2><code><b>POST</b> _posts/2016-06-10-authentication-login.md</code> Login</h2></a>
+    <section class='body'>
+      <h3 id="request">Request</h3>
+
+<p><code>{
+    username: 'username',
+    password: '***'
+}</code></p>
+
+<h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+<code>
+{
+    "success": true,
+    "userId": "546cd4615468610a680e0000",
+    "message": "Login successful",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDQ2MTU0Njg2MTBhNjgwZTAwMDAiLCJpYXQiOjE0MTY0MTg3NzUsImV4cCI6MTQyMTYwMjc3NX0.qPKPPJpux64Bg5--5xjecMGCCkPIsmymCJlzvZyNrPo",
+    "username": "pmint93",
+    "email": "phamminhthanh69@gmail.com"
+}
+</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
+    </section>
+  </article>
+
+  <article class='POST'>
+    <a name='/authentication-facebook' href='#/authentication-facebook'><h2><code><b>POST</b> _posts/2016-06-10-authentication-facebook.md</code> Login via facebook</h2></a>
+    <section class='body'>
+      <h3 id="request">Request</h3>
+
+<p><code>{
+    fbId: 'id',
+    email: 'email'
+}</code></p>
+
+<ul>
+  <li>Extra</li>
+</ul>
+
+<pre><code>{
+    username: 'username',
+    phone_number: 'phone_number',
+    full_name: 'full_name',
+    avatar: 'avatar'
+}
+</code></pre>
+
+<h3 id="response">Response</h3>
+
+<p>Sends back a collection of things.</p>
+
+<p><code>Status: 200 OK</code>
+With non-existed user:
+<code>{
+    "success": true,
+    "userId": "546cd87c5468610e4b000000",
+    "username": null,
+    "email": "phamminhthanh6d9@gmail.com",
+    "message": "New account (Facebook) created!",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDg3YzU0Njg2MTBlNGIwMDAwMDAiLCJpYXQiOjE0MTY0MTk0NTIsImV4cCI6MTQyMTYwMzQ1Mn0.fkj8Kr2icFZeJ2mBaoKXnHQnbGeSOZ0OfSzTtDD6c4w"
+}
+</code>
+With existed user:
+<code>{
+    "success": true,
+    "userId": "546cd87c5468610e4b000000",
+    "username": null,
+    "email": "phamminhthanh6d9@gmail.com",
+    "message": "Account (Facebook) existed. Updated user info &amp; logged in!",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDg3YzU0Njg2MTBlNGIwMDAwMDAiLCJpYXQiOjE0MTY0MTk1MjksImV4cCI6MTQyMTYwMzUyOX0.1sRmxsx9E0SJDCiWKDClDRp54JZE5LmjRTRmlUWmOCM"
+}
+</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
 
     </section>
   </article>
@@ -719,6 +795,16 @@ Success:
   </article>
 
   <article class=''>
+    <a name='/Hostname' href='#/Hostname'><h2>Host name</h2></a>
+    <section class='body'>
+      <h3 id="marker-apis">Marker APIs</h3>
+
+<p>http://123.31.16.139/</p>
+
+    </section>
+  </article>
+
+  <article class=''>
     <a name='/Home' href='#/Home'><h2>Home</h2></a>
     <section class='body'>
       <h2 id="welcome-to-the-gong-backend-wiki">Welcome to the gong-backend wiki!</h2>
@@ -1219,72 +1305,6 @@ Success:
 </code></p>
   </li>
 </ul>
-
-    </section>
-  </article>
-
-  <article class=''>
-    <a name='/response-status-codes' href='#/response-status-codes'><h2>Response status codes</h2></a>
-    <section class='body'>
-      <h3 id="success">Success</h3>
-
-<p>Successes differ from errors in that their body may not be a simple response object with a code and a message. The headers however are consistent across all calls:</p>
-
-<ul>
-  <li><code>GET</code>, <code>PUT</code>, <code>DELETE</code> returns <code>200 OK</code> on success,</li>
-  <li><code>POST </code> returns 201 on success,</li>
-</ul>
-
-<p>When <a href="#get-stuff">retrieving stuff</a> for example:</p>
-
-<p><code>Status: 200 OK</code>
-<code>{
-    {
-        id: thing_1,
-        name: 'My first thing'
-    },
-    {
-        id: thing_2,
-        name: 'My second thing'
-    }
-}</code></p>
-
-<h3 id="error">Error</h3>
-
-<p>Error responses are simply returning <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">standard HTTP error codes</a> along with some additional information:</p>
-
-<ul>
-  <li>The error code is sent back as a status header,</li>
-  <li>The body includes an object describing both the code and message (for debugging and/or display purposes),</li>
-</ul>
-
-<p>For a call with an invalid authentication token for example:</p>
-
-<p><code>Status: 401 Access denied</code>
-<code>{
-    code: 401,
-    message: 'Access denied: invalid authentication token.'
-}</code></p>
-
-    </section>
-  </article>
-
-  <article class=''>
-    <a name='/authentication' href='#/authentication'><h2>Authenticate</h2></a>
-    <section class='body'>
-      <p>This method allows users to retrieve stuff.</p>
-
-<h3 id="response">Response</h3>
-
-<p>Sends back a collection of things.</p>
-
-<p><code>Authentication: bearer TOKEN</code>
-<code>{
-    id: thing_2,
-    name: 'My second thing'
-}</code></p>
-
-<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
 
     </section>
   </article>
