@@ -1,26 +1,38 @@
-Vị trí quét markers xung quanh khu vực bản đồ
+<p>Vị trí quét markers xung quanh khu vực bản đồ</p>
 
-### Request
+<h3 id="request">Request</h3>
 
-```{
+<p><code>{
     locationLatMin: 'locationLat',
     locationLngMin: 'locationLng',
     locationLatMax: 'locationLat',
     locationLngMax: 'locationLng',
     markerType: 'markerType',
     markerCategory: 'markerCategory'
-}```
+}</code></p>
 
-* Optional params to pagination: page, [ limit(default:1)]
-* Optional params to sector select: direction, angle
-* Optional params to name filter: looklike (trái|phải|tốc độ)
+<ul>
+  <li>Optional params to pagination: page, [ limit(default:1)]</li>
+  <li>Optional params to sector select: direction, angle</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Optional params to name filter: looklike (trái</td>
+          <td>phải</td>
+          <td>tốc độ)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
-### Response
+<h3 id="response">Response</h3>
 
-Sends back a collection of things.
+<p>Sends back a collection of things.</p>
 
-```Status: 200 OK```
-```
+<p><code>Status: 200 OK</code>
+<code>
 {
     "success": true,
     "markers": [
@@ -82,6 +94,6 @@ Sends back a collection of things.
         }
     ]
 }
-```
+</code></p>
 
-For errors responses, see the [response status codes documentation](#response-status-codes).
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>

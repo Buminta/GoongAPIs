@@ -163,31 +163,43 @@
 <section id='content'>
 
   <article class='GET'>
-    <a name='/marker-within-box' href='#/marker-within-box'><h2><code><b>GET</b> _posts/2016-06-10-marker-within-box.mdown</code> Within box</h2></a>
+    <a name='/marker-within-box' href='#/marker-within-box'><h2><code><b>GET</b> /marker/within_box</code> Within box</h2></a>
     <section class='body'>
-      Vị trí quét markers xung quanh khu vực bản đồ
+      <p>Vị trí quét markers xung quanh khu vực bản đồ</p>
 
-### Request
+<h3 id="request">Request</h3>
 
-```{
+<p><code>{
     locationLatMin: 'locationLat',
     locationLngMin: 'locationLng',
     locationLatMax: 'locationLat',
     locationLngMax: 'locationLng',
     markerType: 'markerType',
     markerCategory: 'markerCategory'
-}```
+}</code></p>
 
-* Optional params to pagination: page, [ limit(default:1)]
-* Optional params to sector select: direction, angle
-* Optional params to name filter: looklike (trái|phải|tốc độ)
+<ul>
+  <li>Optional params to pagination: page, [ limit(default:1)]</li>
+  <li>Optional params to sector select: direction, angle</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Optional params to name filter: looklike (trái</td>
+          <td>phải</td>
+          <td>tốc độ)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
-### Response
+<h3 id="response">Response</h3>
 
-Sends back a collection of things.
+<p>Sends back a collection of things.</p>
 
-```Status: 200 OK```
-```
+<p><code>Status: 200 OK</code>
+<code>
 {
     "success": true,
     "markers": [
@@ -249,20 +261,21 @@ Sends back a collection of things.
         }
     ]
 }
-```
+</code></p>
 
-For errors responses, see the [response status codes documentation](#response-status-codes).
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
     </section>
   </article>
 
   <article class='POST'>
-    <a name='/marker-set-marker' href='#/marker-set-marker'><h2><code><b>POST</b> _posts/2016-06-10-marker-set-marker.mdown</code> Set marker</h2></a>
+    <a name='/marker-set-marker' href='#/marker-set-marker'><h2><code><b>POST</b> /marker/set_marker</code> Set marker</h2></a>
     <section class='body'>
-      Vị trí quét markers đằng trước mặt
+      <p>Vị trí quét markers đằng trước mặt</p>
 
-### Request
+<h3 id="request">Request</h3>
 
-```{
+<p><code>{
     locationLat: 'locationLat',
     locationLng: 'locationLng',
     name: 'name',
@@ -271,58 +284,71 @@ For errors responses, see the [response status codes documentation](#response-st
     description_number: 'description_number',
     image_avatar: 'image_avatar',
     image_slide: 'image_slide'
-}```
+}</code></p>
 
-### Response
+<h3 id="response">Response</h3>
 
-Sends back a collection of things.
+<p>Sends back a collection of things.</p>
 
-```Status: 200 OK```
+<p><code>Status: 200 OK</code></p>
 
-Location not shared yet:
+<p>Location not shared yet:</p>
 
-```{
+<p><code>{
     "success": true,
     "message": "Cảm ơn bạn đã chia sẻ, địa điểm đã được duyệt tự động, +3 điểm !"
-}```
+}</code></p>
 
-Location is shared yet, get bonus share:
+<p>Location is shared yet, get bonus share:</p>
 
-```{
+<p><code>{
     "success": true,
     "message": "Địa điểm này đã có người chia sẻ, bạn được +1 điểm"
 }
-```
+</code></p>
 
-For errors responses, see the [response status codes documentation](#response-status-codes).
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
     </section>
   </article>
 
   <article class='GET'>
-    <a name='/marker-get-markers' href='#/marker-get-markers'><h2><code><b>GET</b> _posts/2016-06-10-marker-get-markers.mdown</code> Get markers</h2></a>
+    <a name='/marker-get-markers' href='#/marker-get-markers'><h2><code><b>GET</b> /marker/get_markers</code> Get markers</h2></a>
     <section class='body'>
-      Vị trí quét markers đằng trước mặt
+      <p>Vị trí quét markers đằng trước mặt</p>
 
-### Request
+<h3 id="request">Request</h3>
 
-```{
+<p><code>{
     locationLat: 'locationLat',
     locationLng: 'locationLng',
     radius: 50,
     markerType: 'markerType',
     markerCategory: 'markerCategory'
-}```
+}</code></p>
 
-* Optional params to pagination: page, [ limit(default:1)]
-* Optional params to sector select: direction, angle
-* Optional params to name filter: looklike (trái|phải|tốc độ)
+<ul>
+  <li>Optional params to pagination: page, [ limit(default:1)]</li>
+  <li>Optional params to sector select: direction, angle</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Optional params to name filter: looklike (trái</td>
+          <td>phải</td>
+          <td>tốc độ)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
-### Response
+<h3 id="response">Response</h3>
 
-Sends back a collection of things.
+<p>Sends back a collection of things.</p>
 
-```Status: 200 OK```
-```
+<p><code>Status: 200 OK</code>
+<code>
 {
     "success": true,
     "markers": [
@@ -386,94 +412,98 @@ Sends back a collection of things.
         }
     ]
 }
-```
+</code></p>
 
-For errors responses, see the [response status codes documentation](#response-status-codes).
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
     </section>
   </article>
 
   <article class='POST'>
-    <a name='/geo-service-speed-report' href='#/geo-service-speed-report'><h2><code><b>POST</b> _posts/2016-06-10-geo-service-speed-report.mdown</code> Speed report</h2></a>
+    <a name='/geo-service-speed-report' href='#/geo-service-speed-report'><h2><code><b>POST</b> /geoservice/speed_report</code> Speed report</h2></a>
     <section class='body'>
-      ### Request
+      <h3 id="request">Request</h3>
 
-```{
+<p><code>{
     locationLat: 'locationLat',
     locationLng: 'locationLng',
     speed: 50
-}```
+}</code></p>
 
-### Response
+<h3 id="response">Response</h3>
 
-Sends back a collection of things.
+<p>Sends back a collection of things.</p>
 
-```Status: 200 OK```
-```
+<p><code>Status: 200 OK</code>
+<code>
 {
     "success": true,
     "message": "Báo cáo thành công, cảm ơn bạn"
 }
-```
+</code></p>
 
-For errors responses, see the [response status codes documentation](#response-status-codes).
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
     </section>
   </article>
 
   <article class='GET'>
-    <a name='/geo-service-get-speed-limit' href='#/geo-service-get-speed-limit'><h2><code><b>GET</b> _posts/2016-06-10-geo-service-get-speed-limit.mdown</code> Get speed limit</h2></a>
+    <a name='/geo-service-get-speed-limit' href='#/geo-service-get-speed-limit'><h2><code><b>GET</b> /geoservice/get_speed_limit</code> Get speed limit</h2></a>
     <section class='body'>
-      ### Request
+      <h3 id="request">Request</h3>
 
-```{
+<p><code>{
     locationLat: 'locationLat',
     locationLng: 'locationLng'
-}```
+}</code></p>
 
-### Response
+<h3 id="response">Response</h3>
 
-Sends back a collection of things.
+<p>Sends back a collection of things.</p>
 
-```Status: 200 OK```
-```
+<p><code>Status: 200 OK</code>
+<code>
 {
     "success": true,
     "road_name": "Đường vào Thuần Mỹ",
     "speed_limit" :30
 }
-```
+</code></p>
 
-For errors responses, see the [response status codes documentation](#response-status-codes).
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
     </section>
   </article>
 
   <article class='GET'>
-    <a name='/geo-service-address' href='#/geo-service-address'><h2><code><b>GET</b> _posts/2016-06-10-geo-service-address.mdown</code> Get address</h2></a>
+    <a name='/geo-service-address' href='#/geo-service-address'><h2><code><b>GET</b> /geoservice/get_address</code> Get address</h2></a>
     <section class='body'>
-      ### Request
+      <h3 id="request">Request</h3>
 
-```{
+<p><code>{
     locationLat: 'locationLat',
     locationLng: 'locationLng'
-}```
+}</code></p>
 
-### Response
+<h3 id="response">Response</h3>
 
-Sends back a collection of things.
+<p>Sends back a collection of things.</p>
 
-```Status: 200 OK```
-```
+<p><code>Status: 200 OK</code>
+<code>
 {
     "success": true,
     "result": "Xã Giáp Đắt, Huyện Đà Bắc, Hòa Bình"
 }
-```
+</code></p>
 
-For errors responses, see the [response status codes documentation](#response-status-codes).
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
+
     </section>
   </article>
 
   <article class='POST'>
-    <a name='/file-upload' href='#/file-upload'><h2><code><b>POST</b> _posts/2016-06-10-file-upload.md</code> Upload file</h2></a>
+    <a name='/file-upload' href='#/file-upload'><h2><code><b>POST</b> /files</code> Upload file</h2></a>
     <section class='body'>
       <h3 id="request">Request</h3>
 
@@ -499,7 +529,7 @@ For errors responses, see the [response status codes documentation](#response-st
   </article>
 
   <article class='GET'>
-    <a name='/file-get' href='#/file-get'><h2><code><b>GET</b> _posts/2016-06-10-file-get.md</code> GET file</h2></a>
+    <a name='/file-get' href='#/file-get'><h2><code><b>GET</b> /files/:file_name</code> GET file</h2></a>
     <section class='body'>
       <h3 id="response">Response</h3>
 
@@ -516,7 +546,7 @@ For errors responses, see the [response status codes documentation](#response-st
   </article>
 
   <article class='GET'>
-    <a name='/client-share-marker' href='#/client-share-marker'><h2><code><b>GET</b> _posts/2016-06-10-client-share-marker.md</code> Share marker</h2></a>
+    <a name='/client-share-marker' href='#/client-share-marker'><h2><code><b>GET</b> /s/m/:marker_id</code> Share marker</h2></a>
     <section class='body'>
       <h3 id="response">Response</h3>
 
@@ -559,7 +589,7 @@ For errors responses, see the [response status codes documentation](#response-st
   </article>
 
   <article class='GET'>
-    <a name='/client-share-location' href='#/client-share-location'><h2><code><b>GET</b> _posts/2016-06-10-client-share-location.md</code> Share marker</h2></a>
+    <a name='/client-share-location' href='#/client-share-location'><h2><code><b>GET</b> /s/l/:lng/:lat(/:name)(/:user_id)</code> Share marker</h2></a>
     <section class='body'>
       <h3 id="response">Response</h3>
 
@@ -595,7 +625,7 @@ For errors responses, see the [response status codes documentation](#response-st
   </article>
 
   <article class='GET'>
-    <a name='/client-share-app' href='#/client-share-app'><h2><code><b>GET</b> _posts/2016-06-10-client-share-app.md</code> Share app</h2></a>
+    <a name='/client-share-app' href='#/client-share-app'><h2><code><b>GET</b> /s/install</code> Share app</h2></a>
     <section class='body'>
       <h3 id="response">Response</h3>
 
@@ -612,7 +642,7 @@ Open store to install application
   </article>
 
   <article class='GET'>
-    <a name='/client-check-version' href='#/client-check-version'><h2><code><b>GET</b> _posts/2016-06-10-client-check-version.md</code> Version check</h2></a>
+    <a name='/client-check-version' href='#/client-check-version'><h2><code><b>GET</b> /version/check</code> Version check</h2></a>
     <section class='body'>
       <h3 id="response">Response</h3>
 
@@ -632,7 +662,7 @@ Open store to install application
   </article>
 
   <article class='POST'>
-    <a name='/authentication-register' href='#/authentication-register'><h2><code><b>POST</b> _posts/2016-06-10-authentication-register.md</code> Register</h2></a>
+    <a name='/authentication-register' href='#/authentication-register'><h2><code><b>POST</b> /auth/register</code> Register</h2></a>
     <section class='body'>
       <h3 id="request">Request</h3>
 
@@ -672,7 +702,7 @@ Open store to install application
   </article>
 
   <article class='POST'>
-    <a name='/authentication-login' href='#/authentication-login'><h2><code><b>POST</b> _posts/2016-06-10-authentication-login.md</code> Login</h2></a>
+    <a name='/authentication-login' href='#/authentication-login'><h2><code><b>POST</b> /auth/login</code> Login</h2></a>
     <section class='body'>
       <h3 id="request">Request</h3>
 
@@ -703,7 +733,7 @@ Open store to install application
   </article>
 
   <article class='POST'>
-    <a name='/authentication-facebook' href='#/authentication-facebook'><h2><code><b>POST</b> _posts/2016-06-10-authentication-facebook.md</code> Login via facebook</h2></a>
+    <a name='/authentication-facebook' href='#/authentication-facebook'><h2><code><b>POST</b> /auth/facebook</code> Login via facebook</h2></a>
     <section class='body'>
       <h3 id="request">Request</h3>
 
