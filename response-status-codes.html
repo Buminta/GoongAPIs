@@ -7,15 +7,16 @@
   <li><code>POST </code> returns 201 on success,</li>
 </ul>
 
-<p>When <a href="#get-stuff">retrieving stuff</a> for example:</p>
+<p>When <a href="#/authentication-login">retrieving authentication</a> for example:</p>
 
 <p><code>Status: 200 OK</code>
 <code>{
-    {
-        id: id,
-        success: true
-        name: 'My content'
-    }
+    "success": true,
+    "userId": "546cd4615468610a680e0000",
+    "message": "Login successful",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1NDZjZDQ2MTU0Njg2MTBhNjgwZTAwMDAiLCJpYXQiOjE0MTY0MTg3NzUsImV4cCI6MTQyMTYwMjc3NX0.qPKPPJpux64Bg5--5xjecMGCCkPIsmymCJlzvZyNrPo",
+    "username": "pmint93",
+    "email": "phamminhthanh69@gmail.com"
 }</code></p>
 
 <h3 id="error">Error</h3>
