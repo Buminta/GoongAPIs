@@ -101,7 +101,7 @@
               
         <li class='GET'><a href='#/client-share-marker'>Share marker</a></li>
               
-        <li class='GET'><a href='#/client-share-location'>Share marker</a></li>
+        <li class='GET'><a href='#/client-share-location'>Share location</a></li>
               
         <li class='GET'><a href='#/client-share-app'>Share app</a></li>
               
@@ -540,7 +540,7 @@ Success:
   <li>Dislike toggle</li>
 </ul>
 
-<pre><code>Method: dislike_toggle
+<p><code>Method: dislike_toggle
 Route: POST /marker/dislike_toggle
 Params: id, comment
 Success:
@@ -548,8 +548,7 @@ Success:
     "message": "Success",
     "disliked": true,
     "success": true
-}
-</code></pre>
+}</code></p>
 
 <ul>
   <li>Report</li>
@@ -766,9 +765,15 @@ Success:
   </article>
 
   <article class='GET'>
-    <a name='/marker-get-marker-detail' href='#/marker-get-marker-detail'><h2><code><b>GET</b> /marker/get_marker_detail/:id</code> Get marker detail</h2></a>
+    <a name='/marker-get-marker-detail' href='#/marker-get-marker-detail'><h2><code><b>GET</b> /marker/get_marker_detail</code> Get marker detail</h2></a>
     <section class='body'>
-      <h3 id="response">Response</h3>
+      <h3 id="request">Request</h3>
+
+<p><code>{
+    id: 'id'
+}</code></p>
+
+<h3 id="response">Response</h3>
 
 <p>Sends back a collection of things.</p>
 
@@ -1036,35 +1041,13 @@ Success:
   </article>
 
   <article class='GET'>
-    <a name='/client-share-location' href='#/client-share-location'><h2><code><b>GET</b> /s/l/:lng/:lat(/:name)(/:user_id)</code> Share marker</h2></a>
+    <a name='/client-share-location' href='#/client-share-location'><h2><code><b>GET</b> /s/l/:lng/:lat(/:name)(/:user_id)</code> Share location</h2></a>
     <section class='body'>
       <h3 id="response">Response</h3>
 
 <p>Sends back a collection of things.</p>
 
-<p><code>Status: 200 OK</code>
-<code>
-{
-    "action": "MK_CUSTOM",
-    "name": "Giới hạn tốc độ",
-    "lng_lat": [
-        105.73563743800008,
-        20.326369529000033
-    ],
-    "location": {
-        "success": true,
-        "result": "Xã Bát Mọt, Huyện Thường Xuân, Thanh Hóa"
-    },
-    "user": {
-        "avatar": "62feb9ac0eb43067eec9a2d4948d5e8e1a8379d4.pmint.jpg",
-        "full_name": null,
-        "is_banned": false,
-        "total_like": 0,
-        "username": "root",
-        "_id": "5497ec1a5468615b38000000"
-    }
-}
-</code></p>
+<p><code>Status: 200 OK</code></p>
 
 <p>For errors responses, see the <a href="#/response-status-codes">response status codes documentation</a>.</p>
 
